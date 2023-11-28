@@ -1,4 +1,36 @@
+import { getDatabase, ref, onValue, child, get } from "firebase/database";
+import { useEffect, useState } from "react";
+
 const About = () => {
+    const [title, setTitle] = useState("");
+    const [subTitle, setSubTitle] = useState("");
+    // const [image, setImage] = useState("");
+  
+    useEffect(() => {
+    //   const db = getDatabase();
+    //   const heroRef = ref(db, "hero/");
+    //   onValue(heroRef, (snapshot) => {
+    //     const data = snapshot.val();
+    //     setTitle(data.title);
+    //     setSubTitle(data.subTitle);
+    //     setImage(data.image);
+    //   });
+  
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `About`))
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            const data = snapshot.val();
+            setTitle(data.title);
+            setSubTitle(data.subTitle);
+          } else {
+            console.log("No data available");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }, []);
   return (
     <div>    {/* ======= About Section ======= */}
     <section id="about" className="about">
@@ -10,10 +42,11 @@ const About = () => {
             </div>
           </div>
           <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>
+                {title}
+            </h3>
             <p className="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+            {subTitle}
             </p>
             <ul>
               <li><i className="bi bi-check-circle" /> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
