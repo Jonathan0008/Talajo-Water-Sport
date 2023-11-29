@@ -23,7 +23,8 @@ const Header = () => {
               </li>
               <li>
                 <a className="nav-link scrollto" href="#menu">
-                  Menu
+                  Price
+                  {/* price = menu */}
                 </a>
               </li>
               <li>
@@ -33,17 +34,8 @@ const Header = () => {
               </li>
               <li>
                 <a className="nav-link scrollto" href="#events">
-                  Events
-                </a>
-              </li>
-              <li>
-                <a className="nav-link scrollto" href="#chefs">
-                  Chefs
-                </a>
-              </li>
-              <li>
-                <a className="nav-link scrollto" href="#gallery">
-                  Gallery
+                  Facility
+                  {/* Facility = Events */}
                 </a>
               </li>
               <li>

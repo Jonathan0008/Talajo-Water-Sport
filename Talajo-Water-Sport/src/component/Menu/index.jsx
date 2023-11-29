@@ -1,4 +1,29 @@
+import { getDatabase, ref, child, get } from "firebase/database";
+import { useEffect, useState } from "react";
+
+
 const Menu = () => {
+  const [titlen, setTitle] = useState("");
+  const [subTitle, setSubTitle] = useState("");
+  const [image, setImage] = useState("");
+
+  useEffect(() => {
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `Price`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          setTitle(data.title);
+          setSubTitle(data.subTitle);
+          setImage(data.image);
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <div>
       {" "}
@@ -6,19 +31,11 @@ const Menu = () => {
       <section id="menu" className="menu section-bg">
         <div className="container" data-aos="fade-up">
           <div className="section-title">
-            <h2>Menu</h2>
+            <h2>Price</h2>
             <p>Check Our Tasty Menu</p>
           </div>
           <div className="row" data-aos="fade-up" data-aos-delay={100}>
             <div className="col-lg-12 d-flex justify-content-center">
-              <ul id="menu-flters">
-                <li data-filter="*" className="filter-active">
-                  All
-                </li>
-                <li data-filter=".filter-starters">Starters</li>
-                <li data-filter=".filter-salads">Salads</li>
-                <li data-filter=".filter-specialty">Specialty</li>
-              </ul>
             </div>
           </div>
           <div

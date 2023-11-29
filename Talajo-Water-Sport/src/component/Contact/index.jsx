@@ -33,12 +33,19 @@ const Contact = () => {
                   <p>
                     Monday-Saturday:
                     <br />
-                    11:00 AM - 2300 PM
+                    11:00 AM - 23:00 PM
                   </p>
                 </div>
-                <div className="email">
-                  <i className="bi bi-envelope" />
-                  <h4>Email:</h4>
+                <br/>
+                <div className="instagram">
+                  <i className="bi bi-instagram" />
+                  <h4>Instagram:</h4>
+                  <p>info@example.com</p>
+                </div>
+                <br/>
+                <div className="facebook">
+                  <i className="bi bi-facebook" />
+                  <h4>Facebook:</h4>
                   <p>info@example.com</p>
                 </div>
                 <div className="phone">
