@@ -12,18 +12,27 @@ const Hero = () => {
           <div className="row">
             <div className="col-lg-8">
               <h1>
-                Welcome to <span>Restaurantly</span>
+                Welcome to <br/><span>Talajo Water Sport</span>
               </h1>
-              <h2>Delivering great food for more than 18 years!</h2>
+              <h2>Enjoy your wonderful moments with us</h2>
               <div className="btns">
-                <a href="#menu" className="btn-menu animated fadeInUp scrollto">
-                  Our Menu
+                <a 
+                  href="#menu" 
+                  className="btn-menu animated fadeInUp scrollto"
+                  >
+                  Price
                 </a>
                 <a
-                  href="#book-a-table"
+                  href="#events"
                   className="btn-book animated fadeInUp scrollto"
                 >
-                  Book a Table
+                  Facility
+                </a>
+                <a
+                  href="#specials"
+                  className="btn-book animated fadeInUp scrollto"
+                >
+                  Speciials
                 </a>
               </div>
             </div>
@@ -33,7 +42,7 @@ const Hero = () => {
               data-aos-delay={200}
             >
               <a
-                href="https://www.youtube.com/watch?v=u6BOC7CDUTQ"
+                href="https://youtu.be/rU1YqSxmtvQ?si=rqT0-TAQwAJTEVMP"
                 className="glightbox play-btn"
               />
             </div>

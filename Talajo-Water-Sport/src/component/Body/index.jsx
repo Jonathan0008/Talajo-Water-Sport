@@ -29,7 +29,6 @@ const Body = () => {
       <Menu/>
       <Specials/>
       <Events/>
-      <Book/>
       <Testimonials/>
       <Gallery/>
       <Chefs/>
