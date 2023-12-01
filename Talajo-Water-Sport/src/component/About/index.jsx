@@ -5,7 +5,10 @@ const About = () => {
   const [title, setTitle] = useState("");
   const [subTitle, setSubTitle] = useState("");
   const [subTitle2, setSubTitle2] = useState("");
-
+  const [image, setImage] = useState("");
+  const [cek1, setCek1] = useState("");
+  const [cek2, setCek2] = useState("");
+  const [cek3, setCek3] = useState("");
   useEffect(() => {
     const dbRef = ref(getDatabase());
     get(child(dbRef, `About`))
