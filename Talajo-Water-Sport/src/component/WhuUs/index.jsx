@@ -7,36 +7,33 @@ const WhyUs = () => {
         <div className="container" data-aos="fade-up">
           <div className="section-title">
             <h2>Why Us</h2>
-            <p>Why Choose Our Restaurant</p>
+            <p>Why Choose Talajo Water Sports</p>
           </div>
           <div className="row">
             <div className="col-lg-4">
               <div className="box" data-aos="zoom-in" data-aos-delay={100}>
                 <span>01</span>
-                <h4>Lorem Ipsum</h4>
+                <h4>Lokasi Strategis</h4>
                 <p>
-                  Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et
-                  consectetur ducimus vero placeat
+                  Berdekatan dengan pusat kota, hanya dengan kurang lebih 15 menit, memberikan Anda kemudahan dalam mengakses berbagai tempat di kota Manado. Jelajahi kota Manado dengan keindahan dan keunikannya.
                 </p>
               </div>
             </div>
             <div className="col-lg-4 mt-4 mt-lg-0">
               <div className="box" data-aos="zoom-in" data-aos-delay={200}>
                 <span>02</span>
-                <h4>Repellat Nihil</h4>
+                <h4>Dekat destinasi Bunaken</h4>
                 <p>
-                  Dolorem est fugiat occaecati voluptate velit esse. Dicta
-                  veritatis dolor quod et vel dire leno para dest
+                  Tidak lengkap rasanya berkunjung ke Manado, jika tidak menikmati pulau Bunaken. Bunaken merupakan pusat pariwisata dari Sulawesi Utara. Kami bersedia memberikan Anda jasa layanan (partner) menuju Bunaken.
                 </p>
               </div>
             </div>
             <div className="col-lg-4 mt-4 mt-lg-0">
               <div className="box" data-aos="zoom-in" data-aos-delay={300}>
                 <span>03</span>
-                <h4> Ad ad velit qui</h4>
+                <h4> Pemandangan</h4>
                 <p>
-                  Molestiae officiis omnis illo asperiores. Aut doloribus vitae
-                  sunt debitis quo vel nam quis
+                Pemandangan pantai, mangrove dan gunung indah Bunaken dapat dinikmati dari lokasi Talajo Water Sports. Tidak hanya itu, rasakan pengalaman yang berbeda dengan ambience yang kami sediakan.
                 </p>
               </div>
             </div>
