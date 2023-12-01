@@ -9,7 +9,6 @@ const Contact = () => {
   const [hub, setHub] = useState("");
   const [open, setOpen] = useState("");
   const [open1, setOpen1] = useState("");
-
   useEffect(() => {
     const dbRef = ref(getDatabase());
     get(child(dbRef, `Contact`))
@@ -46,7 +45,7 @@ const Contact = () => {
         <div data-aos="fade-up">
           <iframe
             style={{ border: 0, width: "100%", height: 350 }}
-            src="https://www.google.com/maps/place/TALAJO+Watersports+Cafe+%26+Resto/@1.6109216,124.8665472,17z/data=!4m14!1m7!3m6!1s0x3287a39c6bd03787:0xb1dda12ac059cccc!2sTALAJO+Watersports+Cafe+%26+Resto!8m2!3d1.6109162!4d124.8691221!16s%2Fg%2F11rtp1vk75!3m5!1s0x3287a39c6bd03787:0xb1dda12ac059cccc!8m2!3d1.6109162!4d124.8691221!16s%2Fg%2F11rtp1vk75?entry=ttu"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13907.937767417749!2d124.8657999914327!3d1.6100225997480995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3287a39c6bd03787%3A0xb1dda12ac059cccc!2sTALAJO%20Watersports%20Cafe%20%26%20Resto!5e0!3m2!1sen!2sid!4v1701422614957!5m2!1sen!2sid"
             frameBorder={0}
             allowFullScreen
           />
