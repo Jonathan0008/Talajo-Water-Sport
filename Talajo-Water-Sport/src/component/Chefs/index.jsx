@@ -30,8 +30,8 @@ const Chefs = () => {
       <section id="chefs" className="chefs">
         <div className="container" data-aos="fade-up">
           <div className="section-title">
-            <h2>Chefs</h2>
-            <p>Our Proffesional Chefs</p>
+            <h2>Partnership</h2>
+            <p>The Partner Of Talajo Water Sport</p>
           </div>
           <div className="row">
             <div className="col-lg-4 col-md-6">

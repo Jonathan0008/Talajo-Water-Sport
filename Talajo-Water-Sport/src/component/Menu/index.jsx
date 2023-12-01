@@ -41,7 +41,7 @@ const Menu = () => {
         <div className="container" data-aos="fade-up">
           <div className="section-title">
             <h2>Price</h2>
-            <p>Check Our Tasty Menu</p>
+            <p>The Price We Offer</p>
           </div>
           <div className="row" data-aos="fade-up" data-aos-delay={100}>
             <div className="col-lg-12 d-flex justify-content-center">

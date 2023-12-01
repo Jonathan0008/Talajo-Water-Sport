@@ -1,4 +1,38 @@
+import { getDatabase, ref, child, get } from "firebase/database";
+import { useEffect, useState } from "react";
+
 const Gallery = () => {
+  const [image1, setImage1] = useState("");
+  const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
+  const [image4, setImage4] = useState("");
+  const [image5, setImage5] = useState("");
+  const [image6, setImage6] = useState("");
+  const [image7, setImage7] = useState("");
+  const [image8, setImage8] = useState("");
+  useEffect(() => {
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `Gallery`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          setImage1(data.image1);
+          setImage2(data.image2);
+          setImage3(data.image3);
+          setImage4(data.image4);
+          setImage5(data.image5);
+          setImage6(data.image6);
+          setImage7(data.image7);
+          setImage8(data.image8);
+
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <div>
       {" "}
@@ -7,7 +41,7 @@ const Gallery = () => {
         <div className="container" data-aos="fade-up">
           <div className="section-title">
             <h2>Gallery</h2>
-            <p>Some photos from Our Restaurant</p>
+            <p>Some photos from Our Talajo Water Sport</p>
           </div>
         </div>
         <div
@@ -19,12 +53,12 @@ const Gallery = () => {
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
                 <a
-                  href="src/assets/img/gallery/gallery-1.jpg"
+                  href={`${image1}`}
                   className="gallery-lightbox"
                   data-gall="gallery-item"
                 >
                   <img
-                    src="src/assets/img/gallery/gallery-1.jpg"
+                    src={`${image1}`}
                     alt
                     className="img-fluid"
                   />
@@ -34,12 +68,12 @@ const Gallery = () => {
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
                 <a
-                  href="src/assets/img/gallery/gallery-2.jpg"
+                  href={`${image2}`}
                   className="gallery-lightbox"
                   data-gall="gallery-item"
                 >
                   <img
-                    src="src/assets/img/gallery/gallery-2.jpg"
+                    src={`${image2}`}
                     alt
                     className="img-fluid"
                   />
@@ -49,12 +83,12 @@ const Gallery = () => {
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
                 <a
-                  href="src/assets/img/gallery/gallery-3.jpg"
+                  href={`${image3}`}
                   className="gallery-lightbox"
                   data-gall="gallery-item"
                 >
                   <img
-                    src="src/assets/img/gallery/gallery-3.jpg"
+                    src={`${image3}`}
                     alt
                     className="img-fluid"
                   />
@@ -64,12 +98,12 @@ const Gallery = () => {
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
                 <a
-                  href="src/assets/img/gallery/gallery-4.jpg"
+                  href={`${image6}`}
                   className="gallery-lightbox"
                   data-gall="gallery-item"
                 >
                   <img
-                    src="src/assets/img/gallery/gallery-4.jpg"
+                    src={`${image6}`}
                     alt
                     className="img-fluid"
                   />
@@ -79,12 +113,12 @@ const Gallery = () => {
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
                 <a
-                  href="src/assets/img/gallery/gallery-5.jpg"
+                  href={`${image5}`}
                   className="gallery-lightbox"
                   data-gall="gallery-item"
                 >
                   <img
-                    src="src/assets/img/gallery/gallery-5.jpg"
+                    src={`${image5}`}
                     alt
                     className="img-fluid"
                   />
@@ -94,12 +128,12 @@ const Gallery = () => {
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
                 <a
-                  href="src/assets/img/gallery/gallery-6.jpg"
+                  href={`${image4}`}
                   className="gallery-lightbox"
                   data-gall="gallery-item"
                 >
                   <img
-                    src="src/assets/img/gallery/gallery-6.jpg"
+                    src={`${image4}`}
                     alt
                     className="img-fluid"
                   />
@@ -109,12 +143,12 @@ const Gallery = () => {
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
                 <a
-                  href="src/assets/img/gallery/gallery-7.jpg"
+                  href={`${image7}`}
                   className="gallery-lightbox"
                   data-gall="gallery-item"
                 >
                   <img
-                    src="src/assets/img/gallery/gallery-7.jpg"
+                    src={`${image7}`}
                     alt
                     className="img-fluid"
                   />
@@ -124,12 +158,12 @@ const Gallery = () => {
             <div className="col-lg-3 col-md-4">
               <div className="gallery-item">
                 <a
-                  href="src/assets/img/gallery/gallery-8.jpg"
+                  href={`${image8}`}
                   className="gallery-lightbox"
                   data-gall="gallery-item"
                 >
                   <img
-                    src="src/assets/img/gallery/gallery-8.jpg"
+                    src={`${image8}`}
                     alt
                     className="img-fluid"
                   />

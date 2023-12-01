@@ -12,7 +12,7 @@ const Hero = () => {
           <div className="row">
             <div className="col-lg-8">
               <h1>
-                Welcome to <br/><span>Talajo Water Sport</span>
+                Welcome to <br/><span>Talajo Water Sports</span>
               </h1>
               <h2>Enjoy your wonderful moments with us</h2>
               <div className="btns">

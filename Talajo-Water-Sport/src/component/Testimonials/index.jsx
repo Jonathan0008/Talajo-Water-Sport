@@ -52,7 +52,7 @@ const Testimonials = () => {
                     alt
                   />
                   <h3>Arumi Vidha</h3>
-                  <h4>visitors &amp; </h4>
+                  <h4>visitors </h4>
                 </div>
               </div>
             </div>
@@ -71,7 +71,7 @@ const Testimonials = () => {
                     alt
                   />
                   <h3>Imelda Takasowa Kumajas</h3>
-                  <h4>Visitor &amp; </h4>
+                  <h4>Visitor </h4>
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@ const Testimonials = () => {
                     alt
                   />
                   <h3>Budi Dede</h3>
-                  <h4>Visitor &amp; </h4>
+                  <h4>Visitor </h4>
                 </div>
               </div>
             </div>
