@@ -2,7 +2,7 @@ import { getDatabase, ref, child, get } from "firebase/database";
 import { useEffect, useState } from "react";
 
 const Contact = () => {
-  const [alamat, setAlamat] = useState("");
+  // const [alamat, setAlamat] = useState("");
   const [facebook, setFacebook] = useState("");
   const [instagram, setInstagram] = useState("");
   const [lokasi, setLokasi] = useState("");
@@ -16,7 +16,7 @@ const Contact = () => {
       .then((snapshot) => {
         if (snapshot.exists()) {
           const data = snapshot.val();
-          setAlamat(data.alamat);
+          // setAlamat(data.alamat);
           setInstagram(data.instagram);
           setFacebook(data.facebook);
           setLokasi(data.lokasi);
@@ -65,6 +65,8 @@ const Contact = () => {
                   <h4>Open Hours:</h4>
                   <p>
                     {open}
+                    <br/>
+                    {open1}
                   </p>
                 </div>
                 <br/>
