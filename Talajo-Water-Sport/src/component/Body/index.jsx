@@ -3,7 +3,6 @@
 // import Fade from "react-reveal/Fade";
 
 import About from "../About";
-import Book from "../BookATable/Index";
 import Chefs from "../Chefs";
 import Contact from "../Contact";
 import Events from "../Events";

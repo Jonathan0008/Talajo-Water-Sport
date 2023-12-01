@@ -1,4 +1,28 @@
+/* eslint-disable react/no-unescaped-entities */
+import { getDatabase, ref, child, get } from "firebase/database";
+import { useEffect, useState } from "react";
+
 const Chefs = () => {
+  const [imageCs, setImageCs] = useState("");
+  const [imageHtl, setImageHtl] = useState("");
+  const [imageSprt, setImageSprt] = useState("");
+  useEffect(() => {
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `Partner`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          setImageCs(data.imageCs);
+          setImageHtl(data.imageHtl);
+          setImageSprt(data.imageSprt);
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <div>
       {" "}
@@ -13,27 +37,17 @@ const Chefs = () => {
             <div className="col-lg-4 col-md-6">
               <div className="member" data-aos="zoom-in" data-aos-delay={100}>
                 <img
-                  src="src/assets/img/chefs/chefs-1.jpg"
+                  src={`${imageSprt}`}
                   className="img-fluid"
                   alt
                 />
                 <div className="member-info">
                   <div className="member-info-content">
-                    <h4>Walter White</h4>
-                    <span>Master Chef</span>
+                    <h4>JLE'S SPORTS CENTER MANADO</h4>
                   </div>
                   <div className="social">
-                    <a href>
-                      <i className="bi bi-twitter" />
-                    </a>
-                    <a href>
-                      <i className="bi bi-facebook" />
-                    </a>
-                    <a href>
+                    <a href = "https://www.instagram.com/jlessports/">
                       <i className="bi bi-instagram" />
-                    </a>
-                    <a href>
-                      <i className="bi bi-linkedin" />
                     </a>
                   </div>
                 </div>
@@ -42,27 +56,17 @@ const Chefs = () => {
             <div className="col-lg-4 col-md-6">
               <div className="member" data-aos="zoom-in" data-aos-delay={200}>
                 <img
-                  src="src/assets/img/chefs/chefs-2.jpg"
+                  src={`${imageHtl}`}
                   className="img-fluid"
                   alt
                 />
                 <div className="member-info">
                   <div className="member-info-content">
-                    <h4>Sarah Jhonson</h4>
-                    <span>Patissier</span>
+                    <h4>JLE'S Boutique Hotel Manado</h4>
                   </div>
                   <div className="social">
-                    <a href>
-                      <i className="bi bi-twitter" />
-                    </a>
-                    <a href>
-                      <i className="bi bi-facebook" />
-                    </a>
-                    <a href>
+                    <a href = "https://www.instagram.com/jleshotel/">
                       <i className="bi bi-instagram" />
-                    </a>
-                    <a href>
-                      <i className="bi bi-linkedin" />
                     </a>
                   </div>
                 </div>
@@ -71,27 +75,23 @@ const Chefs = () => {
             <div className="col-lg-4 col-md-6">
               <div className="member" data-aos="zoom-in" data-aos-delay={300}>
                 <img
-                  src="src/assets/img/chefs/chefs-3.jpg"
+                  src={`${imageCs}`}
                   className="img-fluid"
                   alt
                 />
                 <div className="member-info">
                   <div className="member-info-content">
-                    <h4>William Anderson</h4>
-                    <span>Cook</span>
+                    <h4>Coming Soon</h4>
                   </div>
                   <div className="social">
                     <a href>
-                      <i className="bi bi-twitter" />
+                      <i className="bi bi-arrow-clockwise" />
                     </a>
                     <a href>
-                      <i className="bi bi-facebook" />
+                      <i className="bi bi-arrow-clockwise" />
                     </a>
                     <a href>
-                      <i className="bi bi-instagram" />
-                    </a>
-                    <a href>
-                      <i className="bi bi-linkedin" />
+                      <i className="bi bi-arrow-clockwise" />
                     </a>
                   </div>
                 </div>
