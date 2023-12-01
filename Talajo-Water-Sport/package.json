@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "firebase": "^10.6.0",
+    "firebase": "^10.7.0",
     "isotope": "^1.0.0-alpha.3",
     "isotope-layout": "^3.0.6",
     "react": "^18.2.0",

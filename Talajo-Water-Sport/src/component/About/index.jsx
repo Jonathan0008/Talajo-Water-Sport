@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 const About = () => {
   const [title, setTitle] = useState("");
   const [subTitle, setSubTitle] = useState("");
-  const [image, setImage] = useState("");
-  
+  const [subTitle2, setSubTitle2] = useState("");
+
   useEffect(() => {
     const dbRef = ref(getDatabase());
     get(child(dbRef, `About`))
@@ -14,7 +14,11 @@ const About = () => {
           const data = snapshot.val();
           setTitle(data.title);
           setSubTitle(data.subTitle);
+          setSubTitle2(data.subTitle2);
           setImage(data.image);
+          setCek1(data.cek1);
+          setCek2(data.cek2);
+          setCek3(data.cek3);
         } else {
           console.log("No data available");
         }
@@ -44,26 +48,17 @@ const About = () => {
               <p className="fst-italic">{subTitle}</p>
               <ul>
                 <li>
-                  <i className="bi bi-check-circle" /> Ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat.
+                <i className="bi bi-check-circle" /> {cek1}
                 </li>
                 <li>
-                  <i className="bi bi-check-circle" /> Duis aute irure dolor in
-                  reprehenderit in voluptate velit.
+                  <i className="bi bi-check-circle" /> {cek2}
                 </li>
                 <li>
-                  <i className="bi bi-check-circle" /> Ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate trideta storacalaperda mastiro
-                  dolore eu fugiat nulla pariatur.
+                  <i className="bi bi-check-circle" /> {cek3}
                 </li>
               </ul>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum
+                {subTitle2}
               </p>
             </div>
           </div>

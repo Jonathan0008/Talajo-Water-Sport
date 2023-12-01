@@ -1,4 +1,36 @@
+import { getDatabase, ref, child, get } from "firebase/database";
+import { useEffect, useState } from "react";
+
 const Contact = () => {
+  // const [alamat, setAlamat] = useState("");
+  const [facebook, setFacebook] = useState("");
+  const [instagram, setInstagram] = useState("");
+  const [lokasi, setLokasi] = useState("");
+  const [hub, setHub] = useState("");
+  const [open, setOpen] = useState("");
+  const [open1, setOpen1] = useState("");
+  useEffect(() => {
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `Contact`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          // setAlamat(data.alamat);
+          setInstagram(data.instagram);
+          setFacebook(data.facebook);
+          setLokasi(data.lokasi);
+          setHub(data.hub);
+          setOpen(data.open);
+          setOpen1(data.open1);
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <div>
       {" "}
@@ -13,7 +45,7 @@ const Contact = () => {
         <div data-aos="fade-up">
           <iframe
             style={{ border: 0, width: "100%", height: 350 }}
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13907.937767417749!2d124.8657999914327!3d1.6100225997480995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3287a39c6bd03787%3A0xb1dda12ac059cccc!2sTALAJO%20Watersports%20Cafe%20%26%20Resto!5e0!3m2!1sen!2sid!4v1701422614957!5m2!1sen!2sid"
             frameBorder={0}
             allowFullScreen
           />
@@ -24,34 +56,34 @@ const Contact = () => {
               <div className="info">
                 <div className="address">
                   <i className="bi bi-geo-alt" />
-                  <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <h4>Location:</h4> 
+                  <p>{lokasi}</p>
                 </div>
                 <div className="open-hours">
                   <i className="bi bi-clock" />
                   <h4>Open Hours:</h4>
                   <p>
-                    Monday-Saturday:
-                    <br />
-                    11:00 AM - 23:00 PM
+                    {open}
+                    <br/>
+                    {open1}
                   </p>
                 </div>
                 <br/>
                 <div className="instagram">
                   <i className="bi bi-instagram" />
                   <h4>Instagram:</h4>
-                  <p>info@example.com</p>
+                  <p>{instagram}</p>
                 </div>
                 <br/>
                 <div className="facebook">
                   <i className="bi bi-facebook" />
                   <h4>Facebook:</h4>
-                  <p>info@example.com</p>
+                  <p>{facebook}</p>
                 </div>
                 <div className="phone">
                   <i className="bi bi-phone" />
                   <h4>Call:</h4>
-                  <p>+1 5589 55488 55s</p>
+                  <p>{hub}</p>
                 </div>
               </div>
             </div>
