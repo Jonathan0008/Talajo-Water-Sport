@@ -1,3 +1,6 @@
+import { getDatabase, ref, child, get } from "firebase/database";
+import { useEffect, useState } from "react";
+
 const Contact = () => {
   // const [alamat, setAlamat] = useState("");
   const [facebook, setFacebook] = useState("");
